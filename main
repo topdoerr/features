@@ -1,0 +1,235 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+
+.test {
+background-image: url("https://d268zs2sdbzvo0.cloudfront.net/668e42c352536a1234c03466_e081caf8-70d7-42df-a606-04101f13368a_test%20(1).webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.purple { background: linear-gradient(to right, #9370DB, #BAA9E8);
+}
+
+.blue { background: linear-gradient(to right, #ADD8E6, #BFEFFF);
+}
+
+.green { background: linear-gradient(to right, #32CD32, #8EE68A);
+
+}
+
+.yellow { background: linear-gradient(to right, #FFFF00, #FFFFCC);
+}
+
+.button-link{
+transition: transform 0.3s ease-in-out;
+color: #3d61a2;
+border-radius: 12px;
+border: 2px solid #3d61a2;
+}
+
+.button-link:hover {
+transform: translateY(-5px);
+background-color: #1e90ff;
+color: white;
+border: 2px solid white;
+}
+
+button{
+cursor: pointer;
+}
+
+#ipuf1z-2-2-2-3-3 {
+    background-image: url("https://d268zs2sdbzvo0.cloudfront.net/668e42c352536a1234c03466_f4596f26-2a3a-41a7-a802-0188daa741b5_download%20(15)%20(1).webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+}
+
+
+
+/* Adjust the z-index if necessary */
+
+
+ #i5ly83-2-2-3-3-2{
+background-image: url("	https://d268zs2sdbzvo0.cloudfront.net/668e1032d5de117b261f986b_b4619da5-de0d-4b6c-9607-cd840eee4737_ai-copiolet%20(1).webp");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+
+.testimonial{
+background-image: url("	https://d268zs2sdbzvo0.cloudfront.net/668e1032d5de117b261f986b_26235e87-b9d6-4837-baa7-ec3e9edb6d02_testimonial_blue_clearer.webp");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+
+
+#i5ly83-2-3{
+background-image: url("	https://d268zs2sdbzvo0.cloudfront.net/66506714874e95c2b495fb59_46307d2e-8928-4a30-ab14-4e87aaf0a598_download%20(12)%20(1).webp");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+
+ul {
+list-style-image: url('https://d268zs2sdbzvo0.cloudfront.net/659c396595bb29385336ea8c_c0b4581c-98fc-47ec-995c-8c984ffba192_checkbox_g.png')
+}
+li {
+    text-align: left !important;
+    margin-top: 10px;
+    font-family: poppins;
+}
+li b {
+    position: relative;
+    top: -30px;
+    left: 15px;
+    font-weight: 200;
+    font-size: 16px !important;
+}
+
+.accordion {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+    font-family: poppins;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.active, .accordion:hover {
+  background-color: #a90414;
+color: white;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  font-family: poppins;
+}
+.panel p {
+    font-size: 17px !important;
+    text-align: left !important;
+    padding-bottom: 10px;
+}
+
+
+</style>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script> <script>
+var items = document.querySelectorAll('#emailForm'); 
+for (var i = 0, len = items.length; i < len; i++) {(function(){ localStorage.removeItem('formSubmissionThrottle'); const form = this;form.addEventListener('submit', function (event) { event.preventDefault();  if (localStorage.getItem('formSubmissionThrottle')) { return; }  localStorage.setItem('formSubmissionThrottle', true);  setTimeout(() => {    localStorage.removeItem('formSubmissionThrottle');  }, 1000);  const url = this.attributes['data-url'] ? this.attributes['data-url'].value : '';  const email = form.querySelector('[name="contact[email]"]').value;  const name = form.querySelector('[name="contact[name]"]').value; if (url) { if (url.trim() === '') {  alert('Please add post request url');  return; } const regex = new RegExp(/[-a-zA-Z0-9@:%._+~#=]{1,256}.[a-zA-Z0-9()]{1,6}([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi);  if (regex.test(url) === false) { alert('Invaliid post request url'); return; } fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json',}, body: JSON.stringify({email, name,}),}).then(response => response.text()).then(data => { }).catch((error) => { 
+console.error('Error:', error);
+ alert('Error: ' + error.message);
+ }); }
+  const parsedUrl = new URL(window.location.href);
+  const apiUrl = `${parsedUrl.protocol}//${parsedUrl.host}`;
+  console.log('sending...');
+  fetch(apiUrl + '/contacts', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json', },
+ body: JSON.stringify({email, name, url: window.location.href}),
+ }).then(response => {
+ const url = window.location.href; fetch(apiUrl + `/funnels/nextPage`, {method: 'POST', headers: {'Content-Type': 'application/json',},
+ body: JSON.stringify({url}),}).then(response => response.json()).then(nextPage => {
+ if(nextPage) { let nextPageUrl = window.location.href.substring(0, url.lastIndexOf('/')) + '/' + (nextPage.path || ''); 
+ window.location.href = nextPageUrl;}}).catch(error => console.log('error', error)); }).catch((error) => {
+ console.error('Error:', error);
+ alert('Error: ' + error.message);
+ });});}.bind(items[i]))();}
+
+
+</script>
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const left2RightAll = document.querySelectorAll(".left2Right");
+    const right2leftAll = document.querySelectorAll(".right2left");
+    const top2BottomAll = document.querySelectorAll(".top2Bottom");
+
+    function checkVisibility() {
+      left2RightAll.forEach((left2Right) => {
+        const rect = left2Right.getBoundingClientRect();
+        const viewportHeight =
+          window.innerHeight || document.documentElement.clientHeight;
+
+        if (rect.top >= 0 && rect.bottom <= viewportHeight) {
+          left2Right.classList.add("visible");
+        }
+      });
+
+      right2leftAll.forEach((right2left) => {
+        const rect = right2left.getBoundingClientRect();
+        const viewportHeight =
+          window.innerHeight || document.documentElement.clientHeight;
+
+        if (rect.top >= 0 && rect.bottom <= viewportHeight) {
+          right2left.classList.add("visible");
+        }
+      });
+
+      top2BottomAll.forEach((leftToRight) => {
+        const rect = leftToRight.getBoundingClientRect();
+        const viewportHeight =
+          window.innerHeight || document.documentElement.clientHeight;
+
+        if (rect.top >= 0 && rect.bottom <= viewportHeight) {
+          leftToRight.classList.add("visible");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility();
+  });
+</script>
+
+
